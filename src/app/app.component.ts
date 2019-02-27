@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'botmap-ng7';
+  title = 'Botmap';
+  version = '2.0.1';
 }
