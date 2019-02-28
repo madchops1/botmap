@@ -2,6 +2,9 @@
 
 body, html {
     height: 100%;
+    background: #303030;
+    color: #fff;
+    font-size: 14px;
     margin: 0 auto;
 }
 
@@ -34,3 +37,12 @@ section {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+
+$pink: #e91e63;
+
+.pink {
+    color: $pink;
+}

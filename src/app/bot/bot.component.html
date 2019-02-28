@@ -1,8 +1,127 @@
-<h1>
-  <span>SPA</span>
-  Sitemap Generator
-</h1>
 
-<h2>
-  I'll gladly crawl your site and generate an XML SITEMAP for sites using Angular, React, Vue, etc... 
-</h2>
+
+<section class="main">
+  <h1>SPA Sitemap Generator</h1>
+  <h2>
+    I'll gladly crawl your site and generate an XML SITEMAP for sites built with Angular, React, Vue... you get the idea. 
+  </h2>
+</section>
+
+<!--
+<mat-toolbar>
+    <span>SPA Sitemap Generator</span>
+  </mat-toolbar>
+-->
+
+
+<form class="example-form" [formGroup]="botForm" (ngSubmit)="onSubmit()" [hidden]="inProgress">
+
+  <mat-form-field class="example-full-width">
+    <input matInput formControlName="url" placeholder="Homepage URL">
+    <mat-hint>eg. http://botmap.surge.sh</mat-hint>
+  </mat-form-field>
+
+  <small class="pink warning">This crawler
+    <u>
+      cannot
+    </u> open a robots.txt file without causing CORS issues. If you wish to dissalow URLs please copy your robots.txt file
+    directly into the box below.
+  </small>
+  
+  <mat-form-field class="example-full-width">
+    <textarea matInput formControlName="robots" placeholder="Robots.txt" value="User-Agent: *
+Disallow: /users
+Disallow: /api
+Disallow: /scripts/view"></textarea>
+  </mat-form-field>
+
+  <small class="pink warning">IMPORTANT: You must include the script below to your site 
+      or botmap will not be able to crawl your site. 
+  </small>
+
+  <textarea style="width:100%; height:112px; line-height:14px; padding:6px; border-radius:6px; background: #ccc; border: 1px dashed #ccc; font-family: courier; font-size: 12px;"
+        onfocus="this.select();" onmouseup="return false;">
+  <script type="text/javascript">
+    var _0xaea9 = ["sitemapgenerator:: ", "innerHTML", "body", "document", "stringify", "*", "postMessage", "setTimeout"]; window[_0xaea9[7]](function () { parent[_0xaea9[6]](_0xaea9[0] + JSON[_0xaea9[4]](window[_0xaea9[3]][_0xaea9[2]][_0xaea9[1]]), _0xaea9[5]) }, 3000);
+  </script></textarea>
+
+  <div class="center submit">
+    <button mat-raised-button type="submit">START</button>
+  </div>
+
+  <h5 *ngIf="success">Your form is valid!</h5>
+    
+
+</form>
+
+<form class="example-form" [formGroup]="cancelForm" (ngSubmit)="onCancel()" [hidden]="!inProgress">
+  
+  
+  <div class="center submit">
+    <button mat-raised-button type="submit">Cancel</button>
+  </div>
+</form> 
+
+
+<single-post></single-post>
+
+  <!--
+    <div class="form-group">
+      <label for="url">Homepage URL</label>
+      <input class="form-control" ng-model="inputUrl" id="url" placeholder="http://botmap.io">
+      <br>
+      <label for="robots>">robots.txt</label>
+      <textarea class="form-control" placeholder="User-Agent: *
+Disallow: /users
+Disallow: /api
+Disallow: /scripts/view" ng-model="robotsTxt"></textarea>
+      <br>
+      <small>This crawler/bot
+        <u>
+          <strong>cannot</strong>
+        </u> open a robots.txt file without causing CORS issues. If you wish to dissalow URLs please copy your robots.txt file
+        directly into the box.</small>
+
+    </div>
+
+    <a class="btn btn-lg btn-success" ng-disabled="!inputUrl" ng-hide="crawling" ng-click="go()" ng-href="javascript:void(0)">GO
+      <span class="glyphicon {{statusIcon}}"></span>
+    </a>
+
+    <br>
+    <br>
+    <small>IMPORTANT: You must include the script below to your site
+      <br>or botmap.io will not be able to crawl your site.</small>
+    <br>
+    <br>
+      <textarea style="width:100%; height:112px; line-height:14px; padding:6px; border-radius:6px; background: #FFFEDF; border: 1px dashed #ccc; font-family: courier; font-size: 12px;"
+        onfocus="this.select();" onmouseup="return false;">
+  <script type="text/javascript">
+    var _0xaea9 = ["sitemapgenerator:: ", "innerHTML", "body", "document", "stringify", "*", "postMessage", "setTimeout"]; window[_0xaea9[7]](function () { parent[_0xaea9[6]](_0xaea9[0] + JSON[_0xaea9[4]](window[_0xaea9[3]][_0xaea9[2]][_0xaea9[1]]), _0xaea9[5]) }, 3000);
+  </script></textarea>
+
+
+<h3>Comment</h3>
+
+  <div id="disqus_thread"></div>
+  <script>
+    /**
+    * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+    */
+
+    var disqus_config = function () {
+      this.page.url = 'http://botmap.io'; // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = 'BotMap.io'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+
+    (function () { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = '//botmap.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+  </noscript>-->
